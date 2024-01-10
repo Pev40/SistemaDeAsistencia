@@ -13,11 +13,7 @@ html(lang='es')
     link(rel='stylesheet' href='/stylesheets/style-create.css')
   body
     nav
-      h2
-        | SCOOBY 
-        br
-        |  ATTENDANCE
-      img(src='/images/logodog.png')
+      img(src='/images/bluecarpet.png')
       #options
         ul
           li
@@ -36,6 +32,7 @@ html(lang='es')
             a(href='/login')
               i.fa.fa-sign-out(aria-hidden='true')
               p Salir
+      img(src='/images/underblue.png')
     main
 
       #bar
@@ -45,33 +42,31 @@ html(lang='es')
       h1 NUEVO CURSO
       form(action='checkcrearcurso' method='post')
         .box
-          label(for='codigo') Código de Curso
+          label(for='codigo') Código
           input#codigo(type='text' name='codigo')
         .box
-          label(for='nombre') Nombre de Curso
+          label(for='nombre') Nombre del Curso
           input#nombre(type='text' name='nombre')
         .box
-          label(for='seccion') Sección
-          select#seccion(name='seccion')
-            each section in sections
-                option(value='#{section.SectionID}') #{section.Section_Name}
+          label(for='seccion') Seccion
+          input#codigo(type='text' name='codigo')
         .box
           label(for='tipo') Tipo
-          select#tipo(name='tipo')
-            each type in types
-                option(value='#{type.TypeID}') #{type.Type_Name} 
+          input#nombre(type='text' name='nombre')
 
         .box
-          label(for='semestre') Semestre
-          select#semestre(name='semestre')
-            option(value='1') Primero
-            option(value='2') Segundo
-            option(value='3') Tercero
-            option(value='4') Cuarto
-            option(value='5') Quinto
-            option(value='6') Sexto
-            option(value='7') Septimo
-            option(value='8') Octavo
-            option(value='9') Noveno
-            option(value='10') Decimo
+          label(for='dia') 
+          select#semestre(name='dias')
+            option(value='1') Lunes
+            option(value='2') Martes
+            option(value='3') Miercoles
+            option(value='4') Jueves
+            option(value='5') Viernes
+
+          label(for='hora') Hora inicio
+          input#nombre(type='text' name='inicio')
+          label(for='hora') Hora fin
+          input#nombre(type='text' name='fin')
+            
+            
         input(type='submit' value='Crear')
